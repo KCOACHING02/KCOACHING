@@ -73,20 +73,20 @@
             object-fit: cover;
             border: 3px solid var(--accent-main); /* Bordure plus fine */
             box-shadow: 0 0 12px var(--shadow-medium); /* Ombre élégante */
-            margin-bottom: 15px;
+            margin-bottom: 5px; /* Réduit l'espace sous le logo */
         }
 
         h1 {
             font-size: 2.4em; /* Plus grand */
             color: var(--text-dark); /* Plus sobre */
-            margin-bottom: 8px;
+            margin-bottom: 0px; /* Supprime l'espace sous le titre K'COACHING */
             font-weight: 700;
         }
 
         .tagline {
             font-size: 1.15em; /* Légèrement plus grande */
             color: var(--text-light); /* Texte plus léger pour la description */
-            margin-bottom: 25px; /* Plus d'espace */
+            margin-bottom: 25px; /* L'espace en dessous du sous-titre reste le même */
             font-weight: 500;
             opacity: 0.9;
         }
@@ -215,9 +215,11 @@
             .profile-picture {
                 width: 110px;
                 height: 110px;
+                margin-bottom: 3px; /* Réduit encore plus l'espace sur mobile */
             }
             h1 {
                 font-size: 2em;
+                margin-bottom: 0px; /* Aucune marge sur mobile non plus */
             }
             .tagline {
                 font-size: 1.05em;
@@ -226,7 +228,7 @@
                 padding: 12px 20px;
                 font-size: 1em;
                 margin-bottom: 15px;
-                flex-direction: row; /* Par défaut, garde la disposition horizontale */
+                flex-direction: row; /* Garde la disposition horizontale */
                 justify-content: flex-start; /* Aligne toujours à gauche */
                 gap: 15px; /* Espacement entre l'image et le texte */
             }

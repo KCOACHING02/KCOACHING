@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K_COACHING - Coach Sportif & Diététique</title>
+    <title>K_COACHING</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -13,6 +13,8 @@
             --text-light: #f0f0f0; /* Texte clair */
             --accent-color: #66BB6A; /* Vert des boutons/accents */
             --accent-dark: #388E3C; /* Vert foncé au survol */
+            --highlight-color: #FFD700; /* Couleur pour mettre en évidence */
+            --highlight-dark: #DAA520; /* Couleur sombre au survol de l'highlight */
             --shadow-dark: rgba(0, 0, 0, 0.4);
         }
 
@@ -65,14 +67,8 @@
         h1 {
             font-size: 2.2em;
             color: var(--accent-color);
-            margin-bottom: 8px;
+            margin-bottom: 20px;
             font-weight: 700;
-        }
-
-        .bio-text {
-            font-size: 1.1em;
-            color: #ccc;
-            margin-bottom: 30px;
         }
 
         .link-button {
@@ -95,6 +91,29 @@
             background-color: var(--accent-dark);
             transform: translateY(-3px); /* Léger soulèvement */
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .highlight-button {
+            background-color: var(--highlight-color);
+            color: var(--background-dark);
+            font-weight: 700;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        .highlight-button:hover {
+            background-color: var(--highlight-dark);
+            color: var(--text-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.03);
+            }
         }
 
         .social-icons {
@@ -132,10 +151,7 @@
             h1 {
                 font-size: 1.8em;
             }
-            .bio-text {
-                font-size: 1em;
-            }
-            .link-button {
+            .link-button, .highlight-button {
                 padding: 12px 20px;
                 font-size: 1em;
                 margin-bottom: 15px;
@@ -155,16 +171,14 @@
         <div class="profile-section">
             <img src="logo.jpg" alt="Logo K_COACHING" class="profile-picture">
             <h1>K_COACHING</h1>
-            <p class="bio-text">Coach Sportif & Diététique 🥗🏋️‍♀️</p>
         </div>
 
-        <a href="https://kcoaching.systeme.io/programme" target="_blank" rel="noopener noreferrer" class="link-button">Mon programme sur mesure</a>
-        <a href="https://kcoaching02.github.io/METAGEMINI/" target="_blank" rel="noopener noreferrer" class="link-button">Ton bilan métabolique ici</a>
+        <a href="https://kcoaching02.github.io/METAGEMINI/" target="_blank" rel="noopener noreferrer" class="link-button highlight-button">Ton bilan métabolique ici</a>
         <a href="https://shop.beacons.ai/kcoaching/910d5675-39f4-4465-9e10-18b5abbce84f" target="_blank" rel="noopener noreferrer" class="link-button">Soins énergétiques</a>
         <a href="#" class="link-button" data-placeholder="creer-business-enligne">Crée ton business en ligne</a>
         <a href="#" class="link-button" data-placeholder="club-viral">Le Club Viral</a>
         <a href="https://kcoaching.systeme.io/contact" target="_blank" rel="noopener noreferrer" class="link-button">Me contacter</a>
-        
+
         <div class="social-icons">
             <a href="https://www.instagram.com/k_coaching.s/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
@@ -175,7 +189,7 @@
             <a href="https://www.youtube.com/@k_coaching.s" target="_blank" rel="noopener noreferrer" class="social-icon youtube" aria-label="YouTube">
                 <i class="fab fa-youtube"></i>
             </a>
-            </div>
+        </div>
     </div>
 </body>
 </html>

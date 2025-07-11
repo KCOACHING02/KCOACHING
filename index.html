@@ -95,7 +95,8 @@
         .link-button {
             display: flex;
             align-items: center;
-            justify-content: center;
+            /* Changement ici : aligne le contenu à gauche */
+            justify-content: flex-start; 
             background-color: var(--accent-pastel);
             color: var(--text-dark);
             padding: 15px 25px;
@@ -125,7 +126,8 @@
         .link-button img {
             width: 90px; /* Taille triplée (30px * 3) */
             height: 90px; /* Taille triplée (30px * 3) */
-            margin-right: 25px; /* Augmentation de la marge pour l'alignement */
+            /* Augmentation de la marge pour un meilleur espacement avec le texte */
+            margin-right: 30px; 
             border-radius: 10px; /* Coins légèrement plus arrondis pour la nouvelle taille */
             object-fit: cover;
             transition: transform 0.2s ease;
@@ -213,6 +215,8 @@
                 margin-bottom: 15px;
                 flex-direction: column; /* Force la disposition en colonne sur mobile */
                 gap: 10px; /* Espacement entre l'image et le texte en colonne */
+                /* Centre le contenu en colonne sur mobile */
+                justify-content: center; 
             }
             .link-button img {
                 width: 60px; /* Taille réduite sur mobile (90px peut être trop grand) */

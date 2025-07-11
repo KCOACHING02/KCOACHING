@@ -120,10 +120,10 @@
             box-shadow: 0 2px 5px var(--shadow-subtle);
         }
 
-        /* Styles pour toutes les images dans les boutons */
+        /* Styles par défaut pour toutes les images dans les boutons */
         .link-button img {
-            width: 180px; /* Taille actuelle */
-            height: 180px; /* Taille actuelle */
+            width: 180px; /* Taille par défaut pour les autres images */
+            height: 180px; /* Taille par défaut pour les autres images */
             margin-right: 35px; /* Augmentation de la marge pour l'alignement */
             border-radius: 8px; /* Coins plus angulaires pour les images */
             object-fit: cover;
@@ -135,6 +135,13 @@
         .link-button:hover img {
             transform: scale(1.02); /* Très léger agrandissement */
             box-shadow: 0 4px 8px var(--shadow-medium); /* Ombre légèrement plus prononcée */
+        }
+
+        /* Style spécifique pour l'image INSTA.jpg (dernière image dans un .link-button) */
+        .link-button:last-of-type img { 
+            width: 45px; /* 180px divisé par 4 */
+            height: 45px; /* 180px divisé par 4 */
+            margin-right: 20px; /* Ajuste la marge pour un meilleur alignement */
         }
 
         .highlight-button {
@@ -210,16 +217,21 @@
                 padding: 12px 20px;
                 font-size: 1em;
                 margin-bottom: 15px;
-                /* Changements ici pour maintenir l'alignement gauche sur mobile */
                 flex-direction: row; /* Garde la disposition horizontale */
                 justify-content: flex-start; /* Aligne toujours à gauche */
                 gap: 15px; /* Espacement entre l'image et le texte */
             }
             .link-button img {
-                width: 100px; /* Taille légèrement plus petite sur mobile */
+                width: 100px; /* Taille par défaut pour les autres images sur mobile */
                 height: 100px;
                 margin-right: 0; /* Pas de marge additionnelle car `gap` gère l'espace */
                 margin-bottom: 0; /* Pas de marge en bas */
+            }
+            /* Style spécifique pour l'image INSTA.jpg sur mobile */
+            .link-button:last-of-type img {
+                width: 30px; /* Adaptation pour mobile (45px / 1.5 environ) */
+                height: 30px;
+                margin-right: 10px; /* Ajustement de la marge pour mobile */
             }
             .social-icons {
                 margin-top: 35px;

@@ -207,18 +207,19 @@
                 font-size: 1.05em;
             }
             .link-button {
-                padding: 12px 20px; /* Padding ajusté */
+                padding: 12px 20px;
                 font-size: 1em;
                 margin-bottom: 15px;
-                flex-direction: column; /* Force la disposition en colonne sur mobile */
-                gap: 8px; /* Espacement réduit en colonne */
-                justify-content: center; /* Centre le contenu en colonne sur mobile */
+                /* Changements ici pour maintenir l'alignement gauche sur mobile */
+                flex-direction: row; /* Garde la disposition horizontale */
+                justify-content: flex-start; /* Aligne toujours à gauche */
+                gap: 15px; /* Espacement entre l'image et le texte */
             }
             .link-button img {
                 width: 100px; /* Taille légèrement plus petite sur mobile */
                 height: 100px;
-                margin-right: 0; /* Réinitialise la marge droite en mode colonne */
-                margin-bottom: 5px; /* Petite marge en bas de l'image en mode colonne */
+                margin-right: 0; /* Pas de marge additionnelle car `gap` gère l'espace */
+                margin-bottom: 0; /* Pas de marge en bas */
             }
             .social-icons {
                 margin-top: 35px;

@@ -10,6 +10,8 @@
         :root {
             /* Nouvelle palette de couleurs pastel */
             --background-light: #F0F4F8; /* Fond très clair, presque blanc cassé */
+            --background-gradient-start: #e0f2f7; /* Bleu très pâle */
+            --background-gradient-end: #f5e0f7; /* Rose très pâle */
             --card-background: #FFFFFF; /* Arrière-plan des cartes/boutons blanc pur */
             --text-dark: #333333; /* Texte sombre pour un bon contraste sur fond clair */
             --accent-pastel: #A2D9CE; /* Vert menthe pastel pour les boutons principaux */
@@ -17,21 +19,31 @@
             --highlight-pastel: #FFEB99; /* Jaune pâle pastel pour le bouton mis en évidence */
             --highlight-pastel-dark: #FFDD66; /* Jaune plus soutenu au survol du highlight */
             --shadow-light: rgba(0, 0, 0, 0.1); /* Ombre plus subtile */
+            --shadow-accent: rgba(162, 217, 206, 0.4); /* Ombre teintée pour les accents */
+            --shadow-highlight: rgba(255, 235, 153, 0.6); /* Ombre teintée pour le highlight */
         }
 
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: var(--background-light); /* Nouveau fond clair */
-            color: var(--text-dark); /* Nouveau texte sombre */
+            /* Dégradé animé en arrière-plan */
+            background: linear-gradient(135deg, var(--background-gradient-start) 0%, var(--background-gradient-end) 100%);
+            background-size: 200% 200%;
+            animation: gradientAnimation 15s ease infinite alternate;
+            color: var(--text-dark);
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Aligne en haut pour laisser de la place */
+            align-items: flex-start;
             min-height: 100vh;
             box-sizing: border-box;
             line-height: 1.6;
-            overflow-y: auto; /* Permet le défilement si le contenu dépasse */
+            overflow-y: auto;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
 
         .container {
@@ -39,9 +51,9 @@
             max-width: 500px;
             margin-top: 30px;
             padding: 25px;
-            background-color: var(--card-background); /* Nouveau fond de carte blanc */
+            background-color: var(--card-background);
             border-radius: 15px;
-            box-shadow: 0 10px 30px var(--shadow-light); /* Ombre plus légère */
+            box-shadow: 0 10px 30px var(--shadow-light);
             text-align: center;
             animation: fadeIn 0.8s ease-out forwards;
         }
@@ -60,24 +72,32 @@
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--accent-pastel); /* Bordure autour de la photo en pastel */
-            box-shadow: 0 0 15px rgba(162, 217, 206, 0.5); /* Ombre lumineuse adaptée */
+            border: 4px solid var(--accent-pastel);
+            box-shadow: 0 0 15px var(--shadow-accent); /* Ombre lumineuse adaptée */
             margin-bottom: 15px;
         }
 
         h1 {
             font-size: 2.2em;
-            color: var(--accent-pastel-dark); /* Couleur du titre plus soutenue pour la visibilité */
-            margin-bottom: 20px;
+            color: var(--accent-pastel-dark);
+            margin-bottom: 5px; /* Moins d'espace pour le sous-titre */
             font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.1em;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 400;
+            opacity: 0.8;
         }
 
         .link-button {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--accent-pastel); /* Couleur pastel pour les boutons */
-            color: var(--text-dark); /* Texte sombre sur bouton clair */
+            background-color: var(--accent-pastel);
+            color: var(--text-dark);
             padding: 15px 25px;
             margin-bottom: 20px;
             border-radius: 10px;
@@ -85,60 +105,65 @@
             font-size: 1.1em;
             font-weight: 600;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 5px 15px var(--shadow-light); /* Ombre plus légère */
+            box-shadow: 0 5px 15px var(--shadow-light);
             overflow: hidden;
+            position: relative; /* Pour les effets additionnels si nécessaire */
         }
 
         .link-button:hover {
-            background-color: var(--accent-pastel-dark); /* Couleur plus foncée au survol */
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Ombre légèrement plus prononcée */
+            background-color: var(--accent-pastel-dark);
+            transform: translateY(-5px) scale(1.02); /* Soulèvement et léger agrandissement */
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Ombre plus profonde au survol */
         }
 
         .link-button:active {
-            transform: scale(0.98);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transform: scale(0.97); /* Légère réduction à l'appui */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre réduite */
         }
 
         .link-button img {
-            width: 30px; /* Taille de l'icône dans le bouton */
+            width: 30px;
             height: 30px;
-            margin-right: 15px; /* Espace entre l'icône et le texte */
-            border-radius: 5px; /* Léger arrondi pour l'image */
+            margin-right: 15px;
+            border-radius: 5px;
             object-fit: cover;
             transition: transform 0.2s ease;
         }
 
         .link-button:hover img {
-            transform: scale(1.05); /* Effet de légère augmentation de l'image au survol */
+            transform: scale(1.1); /* Effet de légère augmentation de l'image au survol */
         }
 
         .highlight-button {
-            background-color: var(--highlight-pastel); /* Couleur pastel pour le highlight */
-            color: var(--text-dark); /* Texte sombre sur bouton highlight */
+            background-color: var(--highlight-pastel);
+            color: var(--text-dark);
             font-weight: 700;
             animation: pulse-smooth 2s infinite ease-in-out alternate;
+            border: 2px solid var(--highlight-pastel-dark); /* Bordure pour le highlight */
         }
 
         .highlight-button:hover {
-            background-color: var(--highlight-pastel-dark); /* Couleur plus soutenue au survol */
-            color: var(--text-dark); /* Garde le texte sombre */
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            background-color: var(--highlight-pastel-dark);
+            color: var(--text-dark);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 25px var(--shadow-highlight); /* Ombre plus profonde et teintée */
         }
 
         @keyframes pulse-smooth {
             0% {
                 transform: scale(1);
                 box-shadow: 0 5px 15px var(--shadow-light);
+                border-color: var(--highlight-pastel-dark);
             }
             50% {
                 transform: scale(1.02);
-                box-shadow: 0 8px 20px rgba(255, 235, 153, 0.6); /* Ombre lumineuse adaptée */
+                box-shadow: 0 10px 25px var(--shadow-highlight);
+                border-color: var(--highlight-pastel);
             }
             100% {
                 transform: scale(1);
                 box-shadow: 0 5px 15px var(--shadow-light);
+                border-color: var(--highlight-pastel-dark);
             }
         }
 
@@ -150,7 +175,7 @@
         }
 
         .social-icon {
-            color: var(--text-dark); /* Couleur des icônes par défaut (sombre sur clair) */
+            color: var(--text-dark);
             font-size: 2.2em;
             transition: color 0.3s ease, transform 0.2s ease;
         }
@@ -158,6 +183,7 @@
         /* Couleurs spécifiques aux marques au survol */
         .social-icon.instagram:hover { color: #E1306C; transform: translateY(-3px); }
         .social-icon.tiktok:hover { color: #69C9D0; transform: translateY(-3px); }
+        /* .social-icon.youtube:hover { color: #FF0000; transform: translateY(-3px); } <-- Supprimé */
         .social-icon.facebook:hover { color: #1877F2; transform: translateY(-3px); }
         .social-icon.linkedin:hover { color: #0A66C2; transform: translateY(-3px); }
 
@@ -176,6 +202,9 @@
             }
             h1 {
                 font-size: 1.8em;
+            }
+            .tagline {
+                font-size: 1em;
             }
             .link-button, .highlight-button {
                 padding: 12px 20px;
@@ -202,11 +231,12 @@
         <div class="profile-section">
             <img src="logo.jpg" alt="Logo K'COACHING" class="profile-picture">
             <h1>K'COACHING</h1>
+            <p class="tagline">Transforme ton bien-être, de l'intérieur.</p>
         </div>
 
         <a href="https://kcoaching02.github.io/METAGEMINI/" target="_blank" rel="noopener noreferrer" class="link-button highlight-button">
             <img src="bilan-metabolique.jpg" alt="Icône Bilan Métabolique">
-            <span>Ton bilan métabolique ici</span>
+            <span>Découvre ton Bilan Métabolique Idéal !</span>
         </a>
 
         <a href="https://shop.beacons.ai/kcoaching/910d5675-39f4-4465-9e10-18b5abbce84f" target="_blank" rel="noopener noreferrer" class="link-button">
@@ -214,9 +244,15 @@
             <span>Soins énergétiques</span>
         </a>
 
-        <a href="https://stan.store/Brilleetvibre/p/formation-dsa--digital-success-academy" target="_blank" rel="noopener noreferrer" class="link-button">Crée ton business en ligne</a>
+        <a href="https://stan.store/Brilleetvibre/p/formation-dsa--digital-success-academy" target="_blank" rel="noopener noreferrer" class="link-button">
+            <img src="cree-business.jpg" alt="Icône Créer Business">
+            <span>Lance ton Business en Ligne Rentable</span>
+        </a>
 
-        <a href="https://stan.store/affiliates/80c38116-8aa0-4d1f-9199-39de2694025b" target="_blank" rel="noopener noreferrer" class="link-button">Le Club Viral</a>
+        <a href="https://stan.store/affiliates/80c38116-8aa0-4d1f-9199-39de2694025b" target="_blank" rel="noopener noreferrer" class="link-button">
+            <img src="club-viral-icon.jpg" alt="Icône Club Viral">
+            <span>Rejoins le Club Viral & Décuple ta Visibilité</span>
+        </a>
         
         <a href="https://www.instagram.com/direct/t/17846779833046780" target="_blank" rel="noopener noreferrer" class="link-button">Me contacter</a>
 

@@ -13,8 +13,8 @@
             --text-light: #f0f0f0; /* Texte clair */
             --accent-color: #66BB6A; /* Vert des boutons/accents */
             --accent-dark: #388E3C; /* Vert foncé au survol */
-            --highlight-color: #FFD700; /* Couleur pour mettre en évidence */
-            --highlight-dark: #DAA520; /* Couleur sombre au survol de l'highlight */
+            --highlight-color: #FFD700; /* Couleur pour mettre en évidence (Jaune Or) */
+            --highlight-dark: #DAA520; /* Jaune Or plus foncé au survol */
             --shadow-dark: rgba(0, 0, 0, 0.4);
         }
 
@@ -72,7 +72,9 @@
         }
 
         .link-button {
-            display: block; /* Chaque lien prend toute la largeur */
+            display: flex; /* Utilise flexbox pour aligner l'image et le texte */
+            align-items: center; /* Centre verticalement */
+            justify-content: center; /* Centre horizontalement */
             background-color: var(--accent-color);
             color: var(--text-light);
             padding: 15px 25px;
@@ -83,7 +85,6 @@
             font-weight: 600;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            position: relative; /* Pour les icônes si besoin */
             overflow: hidden; /* Pour l'effet d'onde */
         }
 
@@ -93,26 +94,51 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
+        /* Animation de clic pour tous les boutons */
+        .link-button:active {
+            transform: scale(0.98); /* Légère réduction à l'appui */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre réduite */
+        }
+
+        .link-button img {
+            width: 30px; /* Taille de l'icône dans le bouton */
+            height: 30px;
+            margin-right: 15px; /* Espace entre l'icône et le texte */
+            border-radius: 5px; /* Léger arrondi pour l'image */
+            object-fit: cover;
+            transition: transform 0.2s ease;
+        }
+
+        .link-button:hover img {
+            transform: scale(1.05); /* Effet de légère augmentation de l'image au survol */
+        }
+
         .highlight-button {
             background-color: var(--highlight-color);
             color: var(--background-dark);
             font-weight: 700;
-            animation: pulse 1.5s infinite alternate;
+            animation: pulse-smooth 2s infinite ease-in-out alternate; /* Animation plus douce */
         }
 
         .highlight-button:hover {
             background-color: var(--highlight-dark);
-            color: var(--text-light);
+            color: var(--text-light); /* Texte clair au survol pour le highlight */
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
-        @keyframes pulse {
-            from {
+        @keyframes pulse-smooth {
+            0% {
                 transform: scale(1);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             }
-            to {
-                transform: scale(1.03);
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4); /* Ombre lumineuse pour le pulse */
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             }
         }
 
@@ -156,6 +182,11 @@
                 font-size: 1em;
                 margin-bottom: 15px;
             }
+            .link-button img {
+                width: 25px;
+                height: 25px;
+                margin-right: 10px;
+            }
             .social-icons {
                 margin-top: 30px;
                 gap: 20px;
@@ -171,12 +202,22 @@
         <div class="profile-section">
             <img src="logo.jpg" alt="Logo K_COACHING" class="profile-picture">
             <h1>K_COACHING</h1>
-        </div>
+            </div>
 
-        <a href="https://kcoaching02.github.io/METAGEMINI/" target="_blank" rel="noopener noreferrer" class="link-button highlight-button">Ton bilan métabolique ici</a>
-        <a href="https://shop.beacons.ai/kcoaching/910d5675-39f4-4465-9e10-18b5abbce84f" target="_blank" rel="noopener noreferrer" class="link-button">Soins énergétiques</a>
+        <a href="https://kcoaching02.github.io/METAGEMINI/" target="_blank" rel="noopener noreferrer" class="link-button highlight-button">
+            <img src="bilan-metabolique.jpg" alt="Icône Bilan Métabolique">
+            <span>Ton bilan métabolique ici</span>
+        </a>
+
+        <a href="https://shop.beacons.ai/kcoaching/910d5675-39f4-4465-9e10-18b5abbce84f" target="_blank" rel="noopener noreferrer" class="link-button">
+            <img src="soins-energetiques.jpg" alt="Icône Soins Énergétiques">
+            <span>Soins énergétiques</span>
+        </a>
+
         <a href="#" class="link-button" data-placeholder="creer-business-enligne">Crée ton business en ligne</a>
+
         <a href="#" class="link-button" data-placeholder="club-viral">Le Club Viral</a>
+        
         <a href="https://kcoaching.systeme.io/contact" target="_blank" rel="noopener noreferrer" class="link-button">Me contacter</a>
 
         <div class="social-icons">
@@ -189,7 +230,7 @@
             <a href="https://www.youtube.com/@k_coaching.s" target="_blank" rel="noopener noreferrer" class="social-icon youtube" aria-label="YouTube">
                 <i class="fab fa-youtube"></i>
             </a>
-        </div>
+            </div>
     </div>
 </body>
 </html>

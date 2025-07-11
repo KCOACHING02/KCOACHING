@@ -137,11 +137,20 @@
             box-shadow: 0 4px 8px var(--shadow-medium); /* Ombre légèrement plus prononcée */
         }
 
-        /* Style spécifique pour l'image INSTA.jpg (dernière image dans un .link-button) */
-        .link-button:last-of-type img { 
-            width: 45px; /* 180px divisé par 4 */
-            height: 45px; /* 180px divisé par 4 */
-            margin-right: 20px; /* Ajuste la marge pour un meilleur alignement */
+        /* Style spécifique pour le bouton "Me contacter" */
+        .link-button.contact-button { /* Nouvelle classe ajoutée au bouton dans le HTML */
+            flex-direction: column; /* L'image et le texte seront empilés */
+            justify-content: center; /* Centre verticalement les éléments */
+            align-items: center; /* Centre horizontalement les éléments */
+            padding: 25px 28px; /* Ajuste le padding pour accueillir les éléments empilés */
+        }
+
+        /* Style spécifique pour l'image INSTA.jpg (à l'intérieur du bouton contact) */
+        .link-button.contact-button img { 
+            width: 45px; /* Taille INSTA */
+            height: 45px; /* Taille INSTA */
+            margin-right: 0; /* Plus de marge à droite car c'est en colonne */
+            margin-bottom: 10px; /* Espace en dessous de l'image */
         }
 
         .highlight-button {
@@ -217,7 +226,7 @@
                 padding: 12px 20px;
                 font-size: 1em;
                 margin-bottom: 15px;
-                flex-direction: row; /* Garde la disposition horizontale */
+                flex-direction: row; /* Par défaut, garde la disposition horizontale */
                 justify-content: flex-start; /* Aligne toujours à gauche */
                 gap: 15px; /* Espacement entre l'image et le texte */
             }
@@ -227,11 +236,18 @@
                 margin-right: 0; /* Pas de marge additionnelle car `gap` gère l'espace */
                 margin-bottom: 0; /* Pas de marge en bas */
             }
-            /* Style spécifique pour l'image INSTA.jpg sur mobile */
-            .link-button:last-of-type img {
-                width: 30px; /* Adaptation pour mobile (45px / 1.5 environ) */
+            /* Style spécifique pour le bouton "Me contacter" sur mobile */
+            .link-button.contact-button {
+                flex-direction: column; /* Re-définit en colonne pour mobile */
+                justify-content: center;
+                align-items: center;
+                padding: 20px 20px; /* Ajuste le padding pour mobile */
+            }
+            .link-button.contact-button img {
+                width: 30px; /* Taille INSTA sur mobile */
                 height: 30px;
-                margin-right: 10px; /* Ajustement de la marge pour mobile */
+                margin-right: 0; /* Pas de marge à droite en colonne */
+                margin-bottom: 8px; /* Espace en dessous de l'image sur mobile */
             }
             .social-icons {
                 margin-top: 35px;
@@ -271,7 +287,7 @@
             <span>Rejoins le Club Viral & Décuple ta Visibilité</span>
         </a>
         
-        <a href="https://www.instagram.com/direct/t/17846779833046780" target="_blank" rel="noopener noreferrer" class="link-button">
+        <a href="https://www.instagram.com/direct/t/17846779833046780" target="_blank" rel="noopener noreferrer" class="link-button contact-button">
             <img src="INSTA.jpg" alt="Icône Instagram Contact">
             <span>Me contacter</span>
         </a>

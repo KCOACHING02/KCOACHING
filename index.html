@@ -8,22 +8,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --background-dark: #1a1a1a; /* Fond sombre */
-            --card-background: #282828; /* Arrière-plan des cartes/boutons */
-            --text-light: #f0f0f0; /* Texte clair */
-            --accent-color: #66BB6A; /* Vert des boutons/accents */
-            --accent-dark: #388E3C; /* Vert foncé au survol */
-            --highlight-color: #FFD700; /* Couleur pour mettre en évidence (Jaune Or) */
-            --highlight-dark: #DAA520; /* Jaune Or plus foncé au survol */
-            --shadow-dark: rgba(0, 0, 0, 0.4);
+            /* Nouvelle palette de couleurs pastel */
+            --background-light: #F0F4F8; /* Fond très clair, presque blanc cassé */
+            --card-background: #FFFFFF; /* Arrière-plan des cartes/boutons blanc pur */
+            --text-dark: #333333; /* Texte sombre pour un bon contraste sur fond clair */
+            --accent-pastel: #A2D9CE; /* Vert menthe pastel pour les boutons principaux */
+            --accent-pastel-dark: #7DCBB7; /* Vert menthe plus foncé au survol */
+            --highlight-pastel: #FFEB99; /* Jaune pâle pastel pour le bouton mis en évidence */
+            --highlight-pastel-dark: #FFDD66; /* Jaune plus soutenu au survol du highlight */
+            --shadow-light: rgba(0, 0, 0, 0.1); /* Ombre plus subtile */
         }
 
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: var(--background-dark);
-            color: var(--text-light);
+            background-color: var(--background-light); /* Nouveau fond clair */
+            color: var(--text-dark); /* Nouveau texte sombre */
             display: flex;
             justify-content: center;
             align-items: flex-start; /* Aligne en haut pour laisser de la place */
@@ -35,12 +36,12 @@
 
         .container {
             width: 100%;
-            max-width: 500px; /* Largeur maximale comme une page de liens typique */
-            margin-top: 30px; /* Marge du haut */
+            max-width: 500px;
+            margin-top: 30px;
             padding: 25px;
-            background-color: var(--card-background);
+            background-color: var(--card-background); /* Nouveau fond de carte blanc */
             border-radius: 15px;
-            box-shadow: 0 10px 30px var(--shadow-dark);
+            box-shadow: 0 10px 30px var(--shadow-light); /* Ombre plus légère */
             text-align: center;
             animation: fadeIn 0.8s ease-out forwards;
         }
@@ -59,86 +60,85 @@
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--accent-color); /* Bordure autour de la photo */
-            box-shadow: 0 0 15px rgba(102, 187, 106, 0.5); /* Ombre lumineuse */
+            border: 4px solid var(--accent-pastel); /* Bordure autour de la photo en pastel */
+            box-shadow: 0 0 15px rgba(162, 217, 206, 0.5); /* Ombre lumineuse adaptée */
             margin-bottom: 15px;
         }
 
         h1 {
             font-size: 2.2em;
-            color: var(--accent-color);
+            color: var(--accent-pastel-dark); /* Couleur du titre plus soutenue pour la visibilité */
             margin-bottom: 20px;
             font-weight: 700;
         }
 
         .link-button {
-            display: flex; /* Utilise flexbox pour aligner l'image et le texte */
-            align-items: center; /* Centre verticalement */
-            justify-content: center; /* Centre horizontalement */
-            background-color: var(--accent-color);
-            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent-pastel); /* Couleur pastel pour les boutons */
+            color: var(--text-dark); /* Texte sombre sur bouton clair */
             padding: 15px 25px;
-            margin-bottom: 20px; /* Espace entre les boutons */
+            margin-bottom: 20px;
             border-radius: 10px;
             text-decoration: none;
             font-size: 1.1em;
             font-weight: 600;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            overflow: hidden; /* Pour l'effet d'onde */
+            box-shadow: 0 5px 15px var(--shadow-light); /* Ombre plus légère */
+            overflow: hidden;
         }
 
         .link-button:hover {
-            background-color: var(--accent-dark);
-            transform: translateY(-3px); /* Léger soulèvement */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background-color: var(--accent-pastel-dark); /* Couleur plus foncée au survol */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Ombre légèrement plus prononcée */
         }
 
-        /* Animation de clic pour tous les boutons */
         .link-button:active {
-            transform: scale(0.98); /* Légère réduction à l'appui */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre réduite */
+            transform: scale(0.98);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .link-button img {
-            width: 30px; /* Taille de l'icône dans le bouton */
+            width: 30px;
             height: 30px;
-            margin-right: 15px; /* Espace entre l'icône et le texte */
-            border-radius: 5px; /* Léger arrondi pour l'image */
+            margin-right: 15px;
+            border-radius: 5px;
             object-fit: cover;
             transition: transform 0.2s ease;
         }
 
         .link-button:hover img {
-            transform: scale(1.05); /* Effet de légère augmentation de l'image au survol */
+            transform: scale(1.05);
         }
 
         .highlight-button {
-            background-color: var(--highlight-color);
-            color: var(--background-dark);
+            background-color: var(--highlight-pastel); /* Couleur pastel pour le highlight */
+            color: var(--text-dark); /* Texte sombre sur bouton highlight */
             font-weight: 700;
-            animation: pulse-smooth 2s infinite ease-in-out alternate; /* Animation plus douce */
+            animation: pulse-smooth 2s infinite ease-in-out alternate;
         }
 
         .highlight-button:hover {
-            background-color: var(--highlight-dark);
-            color: var(--text-light); /* Texte clair au survol pour le highlight */
+            background-color: var(--highlight-pastel-dark); /* Couleur plus soutenue au survol */
+            color: var(--text-dark); /* Garde le texte sombre */
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
         @keyframes pulse-smooth {
             0% {
                 transform: scale(1);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 5px 15px var(--shadow-light);
             }
             50% {
                 transform: scale(1.02);
-                box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4); /* Ombre lumineuse pour le pulse */
+                box-shadow: 0 8px 20px rgba(255, 235, 153, 0.6); /* Ombre lumineuse adaptée */
             }
             100% {
                 transform: scale(1);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 5px 15px var(--shadow-light);
             }
         }
 
@@ -146,15 +146,16 @@
             margin-top: 40px;
             display: flex;
             justify-content: center;
-            gap: 25px; /* Espace entre les icônes */
+            gap: 25px;
         }
 
         .social-icon {
-            color: var(--text-light); /* Couleur des icônes */
-            font-size: 2.2em; /* Taille des icônes */
+            color: var(--text-dark); /* Couleur des icônes par défaut (sombre sur clair) */
+            font-size: 2.2em;
             transition: color 0.3s ease, transform 0.2s ease;
         }
 
+        /* Couleurs spécifiques aux marques au survol */
         .social-icon.instagram:hover { color: #E1306C; transform: translateY(-3px); }
         .social-icon.tiktok:hover { color: #69C9D0; transform: translateY(-3px); }
         .social-icon.youtube:hover { color: #FF0000; transform: translateY(-3px); }
@@ -202,7 +203,7 @@
         <div class="profile-section">
             <img src="logo.jpg" alt="Logo K_COACHING" class="profile-picture">
             <h1>K_COACHING</h1>
-            </div>
+        </div>
 
         <a href="https://kcoaching02.github.io/METAGEMINI/" target="_blank" rel="noopener noreferrer" class="link-button highlight-button">
             <img src="bilan-metabolique.jpg" alt="Icône Bilan Métabolique">

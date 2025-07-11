@@ -121,24 +121,18 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre réduite */
         }
 
+        /* Styles pour toutes les images dans les boutons */
         .link-button img {
-            width: 30px;
-            height: 30px;
-            margin-right: 15px;
-            border-radius: 5px;
+            width: 90px; /* Taille triplée (30px * 3) */
+            height: 90px; /* Taille triplée (30px * 3) */
+            margin-right: 25px; /* Augmentation de la marge pour l'alignement */
+            border-radius: 10px; /* Coins légèrement plus arrondis pour la nouvelle taille */
             object-fit: cover;
             transition: transform 0.2s ease;
         }
 
         .link-button:hover img {
-            transform: scale(1.1); /* Effet de légère augmentation de l'image au survol */
-        }
-
-        /* Style spécifique pour l'image du Club Viral - Agrandie */
-        .link-button img.club-viral-icon {
-            width: 50px; /* Encore plus grande */
-            height: 50px;
-            margin-right: 20px; /* Plus d'espace pour un meilleur alignement */
+            transform: scale(1.05); /* Légère augmentation au survol, moins importante qu'avant */
         }
 
         .highlight-button {
@@ -190,7 +184,6 @@
         /* Couleurs spécifiques aux marques au survol */
         .social-icon.instagram:hover { color: #E1306C; transform: translateY(-3px); }
         .social-icon.tiktok:hover { color: #69C9D0; transform: translateY(-3px); }
-        /* .social-icon.youtube:hover { color: #FF0000; transform: translateY(-3px); } <-- Supprimé */
         .social-icon.facebook:hover { color: #1877F2; transform: translateY(-3px); }
         .social-icon.linkedin:hover { color: #0A66C2; transform: translateY(-3px); }
 
@@ -214,20 +207,15 @@
                 font-size: 1em;
             }
             .link-button, .highlight-button {
-                padding: 12px 20px;
+                padding: 15px 20px; /* Réduction du padding pour compenser la taille des images */
                 font-size: 1em;
                 margin-bottom: 15px;
+                flex-direction: row; /* Assure que l'image et le texte restent en ligne */
             }
             .link-button img {
-                width: 25px;
-                height: 25px;
+                width: 60px; /* Taille réduite sur mobile (90px peut être trop grand) */
+                height: 60px;
                 margin-right: 10px;
-            }
-            /* Ajustement responsive pour l'image du Club Viral */
-            .link-button img.club-viral-icon {
-                width: 35px; /* Taille légèrement plus grande sur mobile aussi */
-                height: 35px;
-                margin-right: 15px;
             }
             .social-icons {
                 margin-top: 30px;
@@ -248,7 +236,7 @@
         </div>
 
         <a href="https://kcoaching02.github.io/METAGEMINI/" target="_blank" rel="noopener noreferrer" class="link-button highlight-button">
-            <img src="CALCULATEUR.jpg" alt="Icône Bilan Métabolique">
+            <img src="CALCULATEUR.jpg" alt="Icône Calculateur Métabolique">
             <span>Découvre ton Bilan Métabolique !</span>
         </a>
 
@@ -258,12 +246,12 @@
         </a>
 
         <a href="https://stan.store/Brilleetvibre/p/formation-dsa--digital-success-academy" target="_blank" rel="noopener noreferrer" class="link-button">
-            <img src="DSA.png" alt="Icône Créer Business">
+            <img src="DSA.png" alt="Icône DSA">
             <span>Lance ton Business en Ligne Rentable</span>
         </a>
 
         <a href="https://stan.store/affiliates/80c38116-8aa0-4d1f-9199-39de2694025b" target="_blank" rel="noopener noreferrer" class="link-button">
-            <img src="CLUBVIRAL.JPG" alt="Icône Club Viral" class="club-viral-icon">
+            <img src="CLUBVIRAL.JPG" alt="Icône Club Viral">
             <span>Rejoins le Club Viral & Décuple ta Visibilité</span>
         </a>
         

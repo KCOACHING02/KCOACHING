@@ -95,7 +95,8 @@
         .link-button {
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* Aligne le contenu à gauche */
+            /* Changement clé : aligne le contenu au début (gauche) */
+            justify-content: flex-start; 
             background-color: var(--accent-pastel);
             color: var(--text-dark);
             padding: 15px 25px;
@@ -123,9 +124,10 @@
 
         /* Styles pour toutes les images dans les boutons */
         .link-button img {
-            width: 180px; /* Taille doublée (90px * 2) */
-            height: 180px; /* Taille doublée (90px * 2) */
-            margin-right: 30px; /* Augmentation de la marge pour l'alignement */
+            width: 180px; /* Taille actuelle */
+            height: 180px; /* Taille actuelle */
+            /* Marge droite pour l'espace entre l'image et le texte */
+            margin-right: 30px; 
             border-radius: 10px; /* Coins légèrement plus arrondis pour la nouvelle taille */
             object-fit: cover;
             transition: transform 0.2s ease;
@@ -216,9 +218,9 @@
                 justify-content: center; /* Centre le contenu en colonne sur mobile */
             }
             .link-button img {
-                width: 120px; /* Taille doublée sur mobile (60px * 2) */
+                width: 120px; /* Taille actuelle sur mobile */
                 height: 120px;
-                margin-right: 0; /* Réinitialise la marge droite */
+                margin-right: 0; /* Réinitialise la marge droite en mode colonne */
             }
             .social-icons {
                 margin-top: 30px;
@@ -253,7 +255,7 @@
             <span>Lance ton Business en Ligne Rentable</span>
         </a>
 
-        <a href="https://stan.store/affiliates/80c381116-8aa0-4d1f-9199-39de2694025b" target="_blank" rel="noopener noreferrer" class="link-button">
+        <a href="https://stan.store/affiliates/80c38116-8aa0-4d1f-9199-39de2694025b" target="_blank" rel="noopener noreferrer" class="link-button">
             <img src="CLUBVIRAL.JPG" alt="Icône Club Viral">
             <span>Rejoins le Club Viral & Décuple ta Visibilité</span>
         </a>

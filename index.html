@@ -95,8 +95,7 @@
         .link-button {
             display: flex;
             align-items: center;
-            /* Changement ici : aligne le contenu à gauche */
-            justify-content: flex-start; 
+            justify-content: flex-start; /* Aligne le contenu à gauche */
             background-color: var(--accent-pastel);
             color: var(--text-dark);
             padding: 15px 25px;
@@ -124,10 +123,9 @@
 
         /* Styles pour toutes les images dans les boutons */
         .link-button img {
-            width: 90px; /* Taille triplée (30px * 3) */
-            height: 90px; /* Taille triplée (30px * 3) */
-            /* Augmentation de la marge pour un meilleur espacement avec le texte */
-            margin-right: 30px; 
+            width: 180px; /* Taille doublée (90px * 2) */
+            height: 180px; /* Taille doublée (90px * 2) */
+            margin-right: 30px; /* Augmentation de la marge pour l'alignement */
             border-radius: 10px; /* Coins légèrement plus arrondis pour la nouvelle taille */
             object-fit: cover;
             transition: transform 0.2s ease;
@@ -135,7 +133,7 @@
         }
 
         .link-button:hover img {
-            transform: scale(1.05); /* Légère augmentation au survol, moins importante qu'avant */
+            transform: scale(1.02); /* Légère augmentation au survol */
         }
 
         .highlight-button {
@@ -215,12 +213,11 @@
                 margin-bottom: 15px;
                 flex-direction: column; /* Force la disposition en colonne sur mobile */
                 gap: 10px; /* Espacement entre l'image et le texte en colonne */
-                /* Centre le contenu en colonne sur mobile */
-                justify-content: center; 
+                justify-content: center; /* Centre le contenu en colonne sur mobile */
             }
             .link-button img {
-                width: 60px; /* Taille réduite sur mobile (90px peut être trop grand) */
-                height: 60px;
+                width: 120px; /* Taille doublée sur mobile (60px * 2) */
+                height: 120px;
                 margin-right: 0; /* Réinitialise la marge droite */
             }
             .social-icons {
@@ -256,7 +253,7 @@
             <span>Lance ton Business en Ligne Rentable</span>
         </a>
 
-        <a href="https://stan.store/affiliates/80c38116-8aa0-4d1f-9199-39de2694025b" target="_blank" rel="noopener noreferrer" class="link-button">
+        <a href="https://stan.store/affiliates/80c381116-8aa0-4d1f-9199-39de2694025b" target="_blank" rel="noopener noreferrer" class="link-button">
             <img src="CLUBVIRAL.JPG" alt="Icône Club Viral">
             <span>Rejoins le Club Viral & Décuple ta Visibilité</span>
         </a>
